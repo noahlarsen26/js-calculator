@@ -1,0 +1,41 @@
+.calculator-container {
+  border: solid 1px red;
+  width: 25rem;
+  margin: 0 auto;
+  height: 90vh;
+}
+.answer-container {
+  background: white;
+  border: solid 1px black;
+  height: 5rem;
+  width: 90%;
+  margin: 0.5rem 1rem;
+  overflow: hidden;
+}
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 83px);
+  grid-auto-rows: calc(100% - 3.8rem);
+  gap: 10px;
+  justify-content: center;
+}
+.btn {
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.3;
+}
+.btn:nth-of-type(8) {
+  grid-column: 4;
+  grid-row: 2 / 6;
+  background: blue;
+  color: white;
+}
+#plus,
+#minus,
+#times,
+#divide {
+  background: lightgray;
+}
