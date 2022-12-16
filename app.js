@@ -1,6 +1,6 @@
 const btns = document.querySelectorAll(".btn");
 const display = document.querySelectorAll(".display");
-const answerContainer = document.querySelector(".answer-container");
+const answer = document.querySelector(".answer");
 const btnContainer = document.querySelector(".btn-container");
 const divide = document.getElementById("divide");
 const addition = document.getElementById("plus");
@@ -31,10 +31,10 @@ numbers.forEach((num) => {
     }
     if (operator === "") {
       // Read first number if no operator set yet
-      answerContainer.textContent = firstNum += value;
+      answer.textContent = firstNum += value;
     } else {
       //read second number
-      answerContainer.textContent = secondNum += value;
+      answer.textContent = secondNum += value;
     }
   });
 });
@@ -43,21 +43,15 @@ operators.forEach((op) => {
   op.addEventListener("click", (e) => {
     if (e.target.textContent !== "=") {
       operator = e.target.textContent;
-
-      answerContainer.textContent = firstNum + operator;
-
-      console.log(firstNum);
-      console.log(operator);
+      answer.textContent = firstNum + operator;
     } else {
-      console.log(secondNum);
-      answerContainer.textContent = secondNum;
-
+      answer.textContent = secondNum;
       switch (operator) {
         case "+":
           console.log(
             (parseFloat(firstNum) + parseFloat(secondNum)).toFixed(2)
           );
-          answerContainer.textContent = (
+          answer.textContent = (
             parseFloat(firstNum) + parseFloat(secondNum)
           ).toFixed(2);
           break;
@@ -65,7 +59,7 @@ operators.forEach((op) => {
           console.log(
             (parseFloat(firstNum) - parseFloat(secondNum)).toFixed(2)
           );
-          answerContainer.textContent = (
+          answer.textContent = (
             parseFloat(firstNum) - parseFloat(secondNum)
           ).toFixed(2);
           break;
@@ -73,7 +67,7 @@ operators.forEach((op) => {
           console.log(
             (parseFloat(firstNum) * parseFloat(secondNum)).toFixed(2)
           );
-          answerContainer.textContent = (
+          answer.textContent = (
             parseFloat(firstNum) * parseFloat(secondNum)
           ).toFixed(2);
           break;
@@ -81,7 +75,7 @@ operators.forEach((op) => {
           console.log(
             (parseFloat(firstNum) / parseFloat(secondNum)).toFixed(2)
           );
-          answerContainer.textContent = (
+          answer.textContent = (
             parseFloat(firstNum) / parseFloat(secondNum)
           ).toFixed(2);
           break;
@@ -96,7 +90,7 @@ clear.addEventListener("click", () => {
   firstNum = "";
   secondNum = "";
   operator = "";
-  answerContainer.textContent = "";
+  answer.textContent = "";
 });
 
 // decimal.addEventListener("click", () => {

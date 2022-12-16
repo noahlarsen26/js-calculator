@@ -1,28 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: hsl(222, 26%, 31%);
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
 .calculator-container {
-  border: solid 1px red;
-  width: 25rem;
+  width: 30rem;
   margin: 0 auto;
   height: 90vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  color: hsl(0, 0%, 100%);
+  width: 90%;
+  height: 2rem;
+  margin: 0 auto;
 }
 .answer-container {
-  background: white;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  background: hsl(224, 36%, 15%);
   border: solid 1px black;
+  border-radius: 10px;
   height: 5rem;
   width: 90%;
-  margin: 0.5rem 1rem;
+  margin: 1.5rem auto;
   overflow: hidden;
+  color: hsl(0, 0%, 100%);
+}
+.answer {
+  margin-left: 10px;
 }
 .btn-container {
+  width: 90%;
+  height: calc(90% - 6rem);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(224, 36%, 15%);
+  border-radius: 10px;
+}
+.btns {
   display: grid;
   grid-template-columns: repeat(4, 83px);
-  grid-auto-rows: calc(100% - 3.8rem);
+  /* grid-auto-rows: calc(100% - 5rem); */
+  grid-auto-rows: 5rem;
   gap: 10px;
   justify-content: center;
+  border-radius: 10px;
+  /* height: calc(100% - 5rem); */
 }
 .btn {
-  font-size: 1rem;
-  background: white;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  /* font-size: 1rem; */
+  background: hsl(30, 25%, 89%);
   cursor: pointer;
+  color: hsl(60, 10%, 19%);
+  box-shadow: 0px 2px 0px 0px hsl(28, 16%, 65%);
+  border-radius: 10px;
 }
 .btn:hover {
   opacity: 0.3;
@@ -30,12 +77,33 @@
 .btn:nth-of-type(8) {
   grid-column: 4;
   grid-row: 2 / 6;
-  background: blue;
-  color: white;
+  background: hsl(6, 63%, 50%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0px 2px 0px 0px hsl(6, 70%, 34%);
 }
-#plus,
-#minus,
-#times,
-#divide {
-  background: lightgray;
+.btn:nth-of-type(17) {
+  background: hsl(225, 21%, 49%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0px 2px 0px 0px hsl(224, 28%, 35%);
+}
+
+@media screen and (max-width: 450px) {
+  .calculator-container {
+    width: 22rem;
+  }
+  .btns {
+    grid-template-columns: repeat(4, 60px);
+  }
+}
+@media screen and (max-width: 350px) {
+  .calculator-container {
+    width: 20rem;
+  }
+  .btns {
+    grid-template-columns: repeat(4, 55px);
+  }
+  .answer-container,
+  .btn {
+    font-size: 24px;
+  }
 }
