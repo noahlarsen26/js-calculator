@@ -72,7 +72,7 @@ h1 {
   border-radius: 10px;
 }
 .btn:hover {
-  opacity: 0.3;
+  background: hsl(0, 0%, 100%);
 }
 .btn:nth-of-type(8) {
   grid-column: 4;
@@ -81,10 +81,16 @@ h1 {
   color: hsl(0, 0%, 100%);
   box-shadow: 0px 2px 0px 0px hsl(6, 70%, 34%);
 }
+.btn:nth-of-type(8):hover {
+  background: hsl(5, 69%, 61%);
+}
 .btn:nth-of-type(17) {
   background: hsl(225, 21%, 49%);
   color: hsl(0, 0%, 100%);
   box-shadow: 0px 2px 0px 0px hsl(224, 28%, 35%);
+}
+.btn:nth-of-type(17):hover {
+  background: hsl(225, 35%, 63%);
 }
 
 @media screen and (max-width: 450px) {
